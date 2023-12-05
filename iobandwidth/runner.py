@@ -43,6 +43,7 @@ EXPERIMENT_LIST = {
         "iou": {"flags": ["--ioengine=io_uring", "--filename=data/input_data"]},
         "iou+p": {"flags": ["--ioengine=io_uring", "--hipri=1", "--filename=data/input_data"]},
         "iou+k": {"flags": ["--ioengine=io_uring", "--sqthread_poll", "--filename=data/input_data"]},
+        "iou+k(pin)": {"flags": ["--ioengine=io_uring", "--sqthread_poll", "--filename=data/input_data", "--sqthread_poll_cpu=0"]},
         "iou+k(+2)": {"flags": ["--ioengine=io_uring", "--sqthread_poll", "--filename=data/input_data"], 'extra_cpus': 2},
         "iou+k(+1)": {"flags": ["--ioengine=io_uring", "--sqthread_poll", "--filename=data/input_data"], 'extra_cpus': 1},
         "aio": {"flags": ["--ioengine=libaio", "--filename=data/input_data"]},
