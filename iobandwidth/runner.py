@@ -40,13 +40,13 @@ cpus_allowed = [4, 16, 64, 126] # Always leave last CPU open as extra thread for
 
 EXPERIMENT_LIST = {
     "CoresVsIOBandwidth": {
-        "aio": {"flags": ["--ioengine=libaio", "--filename=data/input_data"]},
-        "iou": {"flags": ["--ioengine=io_uring", "--filename=data/input_data"]},
-        "iou+p": {"flags": ["--ioengine=io_uring", "--hipri=1", "--filename=data/input_data"]},
-        "iou+k": {"flags": ["--ioengine=io_uring", "--sqthread_poll", "--filename=data/input_data"]},
-        "iou+k(+2)": {"flags": ["--ioengine=io_uring", "--sqthread_poll", "--filename=data/input_data"], 'extra_cpus': 2},
-        "iou+k(+1)": {"flags": ["--ioengine=io_uring", "--sqthread_poll", "--filename=data/input_data"], 'extra_cpus': 1},
-        "iou+k(pin)": {"flags": ["--ioengine=io_uring", "--sqthread_poll", "--filename=data/input_data", "--sqthread_poll_cpu=0"]},
+        "aio": {"flags": ["--ioengine=libaio", "--filename=/mnt/nvme/input_data"]},
+        "iou": {"flags": ["--ioengine=io_uring", "--filename=/mnt/nvme/input_data"]},
+        "iou+p": {"flags": ["--ioengine=io_uring", "--hipri=1", "--filename=/mnt/nvme/input_data"]},
+        "iou+k": {"flags": ["--ioengine=io_uring", "--sqthread_poll", "--filename=/mnt/nvme/input_data"]},
+        "iou+k(+2)": {"flags": ["--ioengine=io_uring", "--sqthread_poll", "--filename=/mnt/nvme/input_data"], 'extra_cpus': 2},
+        "iou+k(+1)": {"flags": ["--ioengine=io_uring", "--sqthread_poll", "--filename=/mnt/nvme/input_data"], 'extra_cpus': 1},
+        "iou+k(pin)": {"flags": ["--ioengine=io_uring", "--sqthread_poll", "--filename=/mnt/nvme/input_data", "--sqthread_poll_cpu=0"]},
         # "spdk": {"flags": ["--ioengine=/users/prikshit/spdk/build/fio/spdk_nvme", "--filename=trtype=PCIe traddr=0000.c1.00.0 ns=1", "--thread=1", "--norandommap=1"]},
     }
 }
